@@ -2,6 +2,8 @@
 
 Herramienta profesional de análisis y diagnóstico de redes WiFi en tiempo real, diseñada para especialistas en RF y administradores de red.
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
 
 ## 🎯 Descripción
 
@@ -61,28 +63,58 @@ WiFi Metrics Monitor Pro es una aplicación web para monitorear y analizar métr
 ### Requisitos Previos
 - Node.js 16+ 
 - npm o yarn
+- Permisos de administrador/sudo (para acceso a APIs de WiFi)
 
 ### Instalación Local
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/wifi-metrics-monitor.git
-cd wifi-metrics-monitor
+git clone https://github.com/tu-usuario/wifi-metrics-monitor-pro.git
+cd wifi-metrics-monitor-pro
 
 # Instalar dependencias
 npm install
 
-# Iniciar en desarrollo
+# Iniciar aplicación Electron en desarrollo
 npm start
 ```
 
-### Despliegue Producción
+### Compilar Ejecutables
 
 ```bash
-# Construir para producción
+# Compilar para tu plataforma actual
 npm run build
 
-# El build estará en /build
+# Compilar específico por plataforma
+npm run build:win      # Windows (.exe)
+npm run build:mac      # macOS (.dmg)
+npm run build:linux    # Linux (.AppImage)
+
+# Los ejecutables estarán en /dist
+```
+
+### Ejecución con Permisos
+
+**Windows:**
+```bash
+# Ejecutar como Administrador (clic derecho > Ejecutar como administrador)
+# O desde PowerShell elevado:
+.\dist\WiFi-Metrics-Monitor-Pro.exe
+```
+
+**macOS:**
+```bash
+# Dar permisos al framework de WiFi
+sudo npm start
+```
+
+**Linux:**
+```bash
+# Instalar dependencias del sistema primero
+sudo apt-get install network-manager wireless-tools
+
+# Ejecutar con permisos
+sudo npm start
 ```
 
 ## 📦 Dependencias
@@ -198,19 +230,7 @@ Basado en mejores prácticas de:
 - Ekahau Site Survey Guidelines
 - Cisco Wireless Design Guide
 
-## 📄 Licencia
 
-MIT License - ver archivo [LICENSE](LICENSE) para detalles
-
-## 👤 Autor
-
-Desarrollado por especialistas en RF para la comunidad de administradores de redes inalámbricas.
-
-## 📞 Soporte
-
-Para preguntas o problemas:
-- Abrir un issue en GitHub
-- Contactar: support@wifimonitor.pro
 
 ---
 
